@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/form_style.css" />
+    <title>Formulário</title>
+</head>
+
+<body>
+    <form id="formulario" method="post" name="formCadastro">
+        <div class="form" align="center">
+            <p class="title">Entre em contato</p>
+            <div>
+                <!-- <label for="nome">Nome</label>  -->
+                <input type="text" maxlength="50" size="50" id="nome" placeholder="Nome Completo" />
+            </div>
+            <div>
+                <!-- <label for="mail">E-mail </label> -->
+                <input type="email" maxlength="50" size="50" id="email" placeholder="E-mail" />
+            </div>
+            <div>
+                <!-- <label for="telefone">Telefone</label>  -->
+                <input type="tel" maxlength="40" size="20" id="telefone" placeholder="Telefone" />
+            </div>
+            <div>
+                <!-- <label for="uf">UF </label> -->
+                <input maxlength="40" size="20" id="uf" placeholder="UF de Residência" />
+            </div>
+            <div>
+                <!-- <label>Mensagem </label> -->
+                    <textarea id="mensagem" placeholder="Mensagem" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"></textarea>
+            </div>
+            <div>
+                <!-- <label>Como nos encontrou?</label> -->
+                <select name="meios_acesso" id="meios_acesso"> 
+                    <option value="" style="color: rgb(102, 102, 102);">Como nos achou?</option>
+                    <option value="google">Pesquisa Google</option>
+                    <option value="televisao">Televisão</option>
+                    <option value="podcast">Podcast</option>
+                    <option value="redes_sociais">Redes Sociais</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+            <div>
+                <p class="btnForm"><button style="font-size:14pt" type="submit" id="btn_form">Enviar</button></p>
+            </div>
+        </div>
+    </form>    
+</body>
+<script>
+    document.getElementById("formulario").onsubmit = function () {
+        let form = document.getElementById('formulario').elements;
+        console.log("Informações preenchidas:" + 'Nome:' + form['nome'].value + 'E-mail:' + form['email'].value + 'Telefone:' + form['telefone'].value + 'UF:' + form['uf'].value + 'Como nos Encontrou:' + form['meios_acesso'].value + 'Mensagem:' + form['mensagem'].value);
+        return false;
+    }
+</script>
+
+</html>
